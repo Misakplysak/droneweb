@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Macha Videos - Profesionální dronové video produkce | Letecké fotografie, videa, mapování a 3D modely">
+    <title>Macha Videos | Profesionální dronové služby</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">Macha <span>Videos</span></a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Domů</a></li>
+                    <li><a href="#sluzby" class="nav-link">Služby</a></li>
+                    <li><a href="#videa" class="nav-link">Videa</a></li>
+                    <li><a href="#foto-slider" class="nav-link">Fotky</a></li>
+                    <li><a href="#fotografie" class="nav-link">Alba</a></li>
+                    <li><a href="#o-mne" class="nav-link">O mně</a></li>
+                    <li><a href="kontakt.html" class="nav-link btn-contact">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Background Image -->
+    <section class="hero parallax-section" id="home">
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=2070')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">Macha Videos</h1>
+            <p class="hero-subtitle fade-in-delay">Profesionální pilot dronů</p>
+            <div class="hero-buttons fade-in-delay-2">
+                <a href="#videa" class="btn btn-primary">Přehrát showreel</a>
+                <a href="kontakt.html" class="btn btn-secondary">Kontakt</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="sluzby">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">CO U MĚ NAJDETE?</span>
+                <h2 class="section-title">Naše služby</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Fotografie</h3>
+                    <p>Profesionální letecké fotografie pro nemovitosti, události a prezentace. Vysoké rozlišení a špičková kvalita.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                    </div>
+                    <h3>Videa</h3>
+                    <p>Dynamická 4K videa pro marketing, dokumentaci staveb nebo sportovní akce. Plynulé záběry a profesionální střih.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>Mapování</h3>
+                    <p>Přesné ortofotomapy a geodetické měření terénu. Ideální pro stavební projekty a zemědělství.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>3D Modely</h3>
+                    <p>Detailní 3D skenování objektů a budov. Vytváříme realistické modely pro prezentace a dokumentaci.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 7l-7 5 7 5V7z"></path>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                            <line x1="5" y1="9" x2="11" y2="9"></line>
+                            <line x1="5" y1="13" x2="9" y2="13"></line>
+                        </svg>
+                    </div>
+                    <h3>Střih videa</h3>
+                    <p>Profesionální postprodukce videí. Color grading, stabilizace a montáž pro dynamický výsledek.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>Úprava fotek</h3>
+                    <p>Retušování a úprava leteckých fotografií. Dokonalé barvy, ostrost a profesionální finish.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery Section -->
+    <section class="video-gallery-section" id="videa">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">VIDEA</span>
+                <h2 class="section-title">Videogalerie</h2>
+            </div>
+            <div class="videos-grid">
+                <div class="video-card" data-aos="fade-up" data-video-id="yqObg2kiEfI">
+                    <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/yqObg2kiEfI/maxresdefault.jpg')">
+                        <div class="video-play-overlay">
+                            <button class="video-play-btn">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="video-info">
+                            <h3>Showreel 2024</h3>
+                            <p>Nejlepší záběry roku</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card" data-aos="fade-up" data-aos-delay="100" data-video-id="0pIyIMqwu0E">
+                    <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/0pIyIMqwu0E/maxresdefault.jpg')">
+                        <div class="video-play-overlay">
+                            <button class="video-play-btn">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="video-info">
+                            <h3>Horské scenérie</h3>
+                            <p>FPV letecké záběry</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card" data-aos="fade-up" data-aos-delay="200" data-video-id="o1AaVMuqDLc">
+                    <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/o1AaVMuqDLc/maxresdefault.jpg')">
+                        <div class="video-play-overlay">
+                            <button class="video-play-btn">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="video-info">
+                            <h3>Městská architektura</h3>
+                            <p>Cinematic city views</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card" data-aos="fade-up" data-aos-delay="300" data-video-id="15FdMiIZBpE">
+                    <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/15FdMiIZBpE/maxresdefault.jpg')">
+                        <div class="video-play-overlay">
+                            <button class="video-play-btn">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="video-info">
+                            <h3>Přírodní krásy</h3>
+                            <p>Landscape drone footage</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card" data-aos="fade-up" data-aos-delay="400" data-video-id="1Qvs7o7ZKK4">
+                    <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/1Qvs7o7ZKK4/maxresdefault.jpg')">
+                        <div class="video-play-overlay">
+                            <button class="video-play-btn">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="video-info">
+                            <h3>Sportovní akce</h3>
+                            <p>Action sports coverage</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <button class="modal-close" id="videoModalClose">&times;</button>
+        <div class="video-modal-content">
+            <div class="video-embed-container" id="videoEmbedContainer">
+                <!-- YouTube iframe will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo Slider Section -->
+    <section class="slider-section photo-slider-section" id="foto-slider">
+        <div class="container-fluid">
+            <div class="section-header">
+                <span class="section-subtitle">FOTOGRAFIE</span>
+                <h2 class="section-title">Vybrané záběry</h2>
+            </div>
+            <div class="slider-wrapper">
+                <button class="slider-btn slider-prev" id="photoSliderPrev">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="slider-container" id="photoSliderContainer">
+                    <div class="slider-track" id="photoSliderTrack">
+                        <div class="slider-item">
+                            <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=2070" alt="Letecký záběr">
+                            <div class="slider-caption">
+                                <h3>Horská krajina</h3>
+                                <p>Cinematic letecké záběry</p>
+                            </div>
+                        </div>
+                        <div class="slider-item">
+                            <img src="https://images.unsplash.com/photo-1508444845599-5c89863b1c44?q=80&w=2070" alt="Městská architektura">
+                            <div class="slider-caption">
+                                <h3>Městská architektura</h3>
+                                <p>Moderní panorama města</p>
+                            </div>
+                        </div>
+                        <div class="slider-item">
+                            <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=2070" alt="Pobřežní záběry">
+                            <div class="slider-caption">
+                                <h3>Pobřežní krajina</h3>
+                                <p>Úchvatné výhledy z ptačí perspektivy</p>
+                            </div>
+                        </div>
+                        <div class="slider-item">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070" alt="Horské scenérie">
+                            <div class="slider-caption">
+                                <h3>Alpské výhledy</h3>
+                                <p>Malebné horské scenérie</p>
+                            </div>
+                        </div>
+                        <div class="slider-item">
+                            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2121" alt="Lesní krajina">
+                            <div class="slider-caption">
+                                <h3>Lesní cesty</h3>
+                                <p>Přírodní krásy z výšky</p>
+                            </div>
+                        </div>
+                        <div class="slider-item">
+                            <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=2070" alt="Severní záře">
+                            <div class="slider-caption">
+                                <h3>Severní světla</h3>
+                                <p>Noční letecké fotografie</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-btn slider-next" id="photoSliderNext">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+            <div class="slider-thumbnails" id="photoSliderThumbnails">
+                <div class="slider-thumbnail active" data-slide="0">
+                    <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=400" alt="Thumbnail 1">
+                </div>
+                <div class="slider-thumbnail" data-slide="1">
+                    <img src="https://images.unsplash.com/photo-1508444845599-5c89863b1c44?q=80&w=400" alt="Thumbnail 2">
+                </div>
+                <div class="slider-thumbnail" data-slide="2">
+                    <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=400" alt="Thumbnail 3">
+                </div>
+                <div class="slider-thumbnail" data-slide="3">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=400" alt="Thumbnail 4">
+                </div>
+                <div class="slider-thumbnail" data-slide="4">
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=400" alt="Thumbnail 5">
+                </div>
+                <div class="slider-thumbnail" data-slide="5">
+                    <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=400" alt="Thumbnail 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Albums Section -->
+    <section class="albums-section" id="fotografie">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">FOTOGRAFIE</span>
+                <h2 class="section-title">Fotogalerie a alba</h2>
+            </div>
+            <div class="albums-grid">
+                <div class="album-card" data-aos="fade-up">
+                    <div class="album-image" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070')">
+                        <div class="album-overlay">
+                            <div class="album-info">
+                                <h3>Nemovitosti</h3>
+                                <p>45 fotografií</p>
+                                <button class="btn btn-small" onclick="openAlbum('nemovitosti')">Zobrazit album</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="album-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="album-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070')">
+                        <div class="album-overlay">
+                            <div class="album-info">
+                                <h3>Příroda</h3>
+                                <p>67 fotografií</p>
+                                <button class="btn btn-small" onclick="openAlbum('priroda')">Zobrazit album</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="album-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="album-image" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070')">
+                        <div class="album-overlay">
+                            <div class="album-info">
+                                <h3>Města</h3>
+                                <p>52 fotografií</p>
+                                <button class="btn btn-small" onclick="openAlbum('mesta')">Zobrazit album</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="album-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="album-image" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2070')">
+                        <div class="album-overlay">
+                            <div class="album-info">
+                                <h3>Sport & Akce</h3>
+                                <p>38 fotografií</p>
+                                <button class="btn btn-small" onclick="openAlbum('sport')">Zobrazit album</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="album-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="album-image" style="background-image: url('https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=2070')">
+                        <div class="album-overlay">
+                            <div class="album-info">
+                                <h3>Pobřeží</h3>
+                                <p>41 fotografií</p>
+                                <button class="btn btn-small" onclick="openAlbum('pobrezi')">Zobrazit album</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="album-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="album-image" style="background-image: url('https://images.unsplash.com/photo-1523906630133-f6934a1ab2b9?q=80&w=2070')">
+                        <div class="album-overlay">
+                            <div class="album-info">
+                                <h3>Lesy</h3>
+                                <p>55 fotografií</p>
+                                <button class="btn btn-small" onclick="openAlbum('lesy')">Zobrazit album</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Album Modal -->
+    <div class="album-modal" id="albumModal">
+        <button class="modal-close" id="albumModalClose">&times;</button>
+        <div class="album-modal-content">
+            <h2 id="albumTitle">Název alba</h2>
+            <div class="album-gallery" id="albumGallery">
+                <!-- Gallery images will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about" id="o-mne">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-content" data-aos="fade-right">
+                    <div class="section-header">
+                        <span class="section-subtitle">PROFESIONÁLNÍ PILOT</span>
+                        <h2 class="section-title">O mně</h2>
+                    </div>
+                    <p>Jsem certifikovaný pilot dronů s několikaletou praxí v oblasti leteckého snímkování. Specializuji se na tvorbu profesionálních videí, fotografií, mapování terénu a vytváření 3D modelů.</p>
+                    <p>Pracuji s nejmodernější technikou včetně DJI Mavic 3 Pro, FPV dronů a profesionálních kamer. Díky tomu dokážu nabídnout špičkovou kvalitu pro komerční projekty, nemovitosti, stavební dokumentaci i sportovní akce.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="150">0</span>
+                            <span class="stat-label">Projektů</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">Klientů</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="5">0</span>
+                            <span class="stat-label">Let zkušeností</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <div class="about-image-bg" style="background-image: url('https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?q=80&w=2070')"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>Připraveni začít váš projekt?</h2>
+                <p>Kontaktujte mě a společně vytvoříme jedinečný obsah</p>
+                <a href="kontakt.html" class="btn btn-primary btn-large">Kontaktujte mě</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">Macha <span>Videos</span></h3>
+                    <p>Profesionální pilot dronů | Letecké snímkování</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Rychlé odkazy</h4>
+                    <ul>
+                        <li><a href="#home">Domů</a></li>
+                        <li><a href="#sluzby">Služby</a></li>
+                        <li><a href="#videa">Videa</a></li>
+                        <li><a href="#foto-slider">Fotky</a></li>
+                        <li><a href="#fotografie">Alba</a></li>
+                        <li><a href="#o-mne">O mně</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Služby</h4>
+                    <ul>
+                        <li><a href="#sluzby">Fotografie</a></li>
+                        <li><a href="#sluzby">Videa</a></li>
+                        <li><a href="#sluzby">Mapování</a></li>
+                        <li><a href="#sluzby">3D Modely</a></li>
+                        <li><a href="#sluzby">Střih videa</a></li>
+                        <li><a href="#sluzby">Úprava fotek</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li><a href="mailto:info@dronepro.cz">info@dronepro.cz</a></li>
+                        <li><a href="tel:+420123456789">+420 123 456 789</a></li>
+                        <li>Praha, Česká republika</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Macha Videos. Všechna práva vyhrazena.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
