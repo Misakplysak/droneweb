@@ -655,11 +655,16 @@ const albums = {
     }
 };
 
+// Current album and image index for lightbox
+let currentAlbum = null;
+let currentImageIndex = 0;
+
 // Open album function (called from HTML onclick)
 window.openAlbum = function(albumKey) {
     const album = albums[albumKey];
     if (!album) return;
 
+    currentAlbum = album;
     albumTitle.textContent = album.title;
     albumGallery.innerHTML = '';
 
@@ -667,7 +672,7 @@ window.openAlbum = function(albumKey) {
         const item = document.createElement('div');
         item.className = 'album-gallery-item';
         item.innerHTML = `<img src="${imageUrl}" alt="${album.title} ${index + 1}">`;
-        item.addEventListener('click', () => openImageLightbox(imageUrl));
+        item.addEventListener('click', () => openImageLightbox(index));
         albumGallery.appendChild(item);
     });
 
@@ -692,64 +697,120 @@ if (albumModal) {
     });
 }
 
-// Simple lightbox for full-size images
-function openImageLightbox(imageUrl) {
+// Lightbox slider for full-size images with navigation
+function openImageLightbox(index) {
+    if (!currentAlbum) return;
+    
+    currentImageIndex = index;
+    
     const lightbox = document.createElement('div');
     lightbox.className = 'image-lightbox';
+    lightbox.id = 'imageLightbox';
+    
     lightbox.innerHTML = `
-        <button class="lightbox-close">&times;</button>
-        <img src="${imageUrl}" alt="Full size image">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <div class="lightbox-counter" id="lightboxCounter">${currentImageIndex + 1} / ${currentAlbum.images.length}</div>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <div class="lightbox-content">
+            <img src="${currentAlbum.images[currentImageIndex]}" alt="${currentAlbum.title} ${currentImageIndex + 1}" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption">${currentAlbum.title.toLowerCase()}-${currentImageIndex + 1}</div>
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
     `;
-    lightbox.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.95);
-        z-index: 20000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-    `;
-
-    const img = lightbox.querySelector('img');
-    img.style.cssText = `
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        border-radius: 8px;
-    `;
-
-    const closeBtn = lightbox.querySelector('.lightbox-close');
-    closeBtn.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: none;
-        border-radius: 50%;
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
-        z-index: 20001;
-    `;
-
-    closeBtn.addEventListener('click', () => {
-        lightbox.remove();
-    });
-
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.remove();
-        }
-    });
 
     document.body.appendChild(lightbox);
+    document.body.style.overflow = 'hidden';
+
+    // Close button
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    
+    // Navigation buttons
+    document.getElementById('lightboxPrev').addEventListener('click', (e) => {
+        e.stopPropagation();
+        navigateLightbox(-1);
+    });
+    
+    document.getElementById('lightboxNext').addEventListener('click', (e) => {
+        e.stopPropagation();
+        navigateLightbox(1);
+    });
+    
+    // Click outside to close
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+            closeLightbox();
+        }
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', lightboxKeyHandler);
+}
+
+function navigateLightbox(direction) {
+    if (!currentAlbum) return;
+    
+    currentImageIndex += direction;
+    
+    // Loop around
+    if (currentImageIndex < 0) {
+        currentImageIndex = currentAlbum.images.length - 1;
+    } else if (currentImageIndex >= currentAlbum.images.length) {
+        currentImageIndex = 0;
+    }
+    
+    // Update image and counter with slide animation
+    const img = document.getElementById('lightboxImage');
+    const counter = document.getElementById('lightboxCounter');
+    const caption = document.getElementById('lightboxCaption');
+    
+    if (img && counter && caption) {
+        // Remove existing animation classes
+        img.classList.remove('slide-in-right', 'slide-in-left');
+        
+        // Add appropriate slide animation based on direction
+        // Use a small delay to trigger the animation
+        setTimeout(() => {
+            img.src = currentAlbum.images[currentImageIndex];
+            img.alt = `${currentAlbum.title} ${currentImageIndex + 1}`;
+            
+            // Add slide animation class
+            if (direction > 0) {
+                img.classList.add('slide-in-right');
+            } else {
+                img.classList.add('slide-in-left');
+            }
+            
+            counter.textContent = `${currentImageIndex + 1} / ${currentAlbum.images.length}`;
+            caption.textContent = `${currentAlbum.title.toLowerCase()}-${currentImageIndex + 1}`;
+        }, 50);
+    }
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('imageLightbox');
+    if (lightbox) {
+        lightbox.remove();
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', lightboxKeyHandler);
+    }
+}
+
+function lightboxKeyHandler(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    } else if (e.key === 'ArrowLeft') {
+        navigateLightbox(-1);
+    } else if (e.key === 'ArrowRight') {
+        navigateLightbox(1);
+    }
 }
 
 // ========================================
