@@ -24,6 +24,20 @@
     --transition: all 0.3s ease;
 }
 
+/* Light Mode Variables */
+:root.light-mode {
+    --bg-dark: #ffffff;
+    --bg-darker: #f8fafc;
+    --bg-card: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -95,9 +109,17 @@ button {
     transition: var(--transition);
 }
 
+.light-mode .navbar {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
 .navbar.scrolled {
     background-color: rgba(15, 15, 15, 0.95);
     box-shadow: var(--shadow-md);
+}
+
+.light-mode .navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 .nav-wrapper {
@@ -189,6 +211,45 @@ button {
     transition: var(--transition);
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.theme-toggle:hover svg {
+    color: white;
+}
+
+.theme-icon {
+    display: none;
+}
+
+.theme-icon.active {
+    display: block;
+}
+
 /* ========================================
    Hero Section with Background Image
 ======================================== */
@@ -235,6 +296,10 @@ button {
     z-index: 1;
 }
 
+.light-mode .hero-overlay {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 100%);
+}
+
 .hero-content {
     position: relative;
     z-index: 1;
@@ -248,6 +313,11 @@ button {
     line-height: 1.1;
     margin-bottom: 20px;
     letter-spacing: -2px;
+    color: white;
+}
+
+.light-mode .hero-title {
+    color: #0f172a;
 }
 
 .hero-title span {
@@ -255,12 +325,67 @@ button {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-weight: 900;
 }
 
 .hero-subtitle {
     font-size: clamp(18px, 3vw, 24px);
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.light-mode .hero-subtitle {
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
     margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.hero-stat:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.light-mode .hero-stat {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .hero-stat:hover {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+    font-size: 24px;
+}
+
+.stat-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}
+
+.light-mode .stat-text {
+    color: #0f172a;
 }
 
 .hero-buttons {
@@ -277,12 +402,12 @@ button {
 }
 
 .fade-in-delay {
-    animation: fadeInUp 0.8s ease 0.2s forwards;
+    animation: fadeInUp 0.8s ease 0.3s forwards;
     opacity: 0;
 }
 
 .fade-in-delay-2 {
-    animation: fadeInUp 0.8s ease 0.4s forwards;
+    animation: fadeInUp 0.8s ease 0.5s forwards;
     opacity: 0;
 }
 
@@ -314,6 +439,10 @@ button {
     position: relative;
 }
 
+.light-mode .scroll-indicator span {
+    border-color: rgba(0, 0, 0, 0.4);
+}
+
 .scroll-indicator span::before {
     content: '';
     position: absolute;
@@ -325,6 +454,10 @@ button {
     background: var(--text-secondary);
     border-radius: 2px;
     animation: scrollDown 2s infinite;
+}
+
+.light-mode .scroll-indicator span::before {
+    background: rgba(0, 0, 0, 0.4);
 }
 
 @keyframes scrollDown {
@@ -362,14 +495,24 @@ button {
 
 .btn-secondary {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
+}
+
+.light-mode .btn-secondary {
+    background: rgba(15, 23, 42, 0.1);
+    color: #0f172a;
+    border: 1px solid rgba(15, 23, 42, 0.3);
+}
+
+.light-mode .btn-secondary:hover {
+    background: rgba(15, 23, 42, 0.2);
 }
 
 .btn-outline {
@@ -1010,6 +1153,10 @@ button {
     overflow-y: auto;
 }
 
+.light-mode .modal {
+    background: rgba(0, 0, 0, 0.90);
+}
+
 .modal.active {
     display: flex;
     align-items: center;
@@ -1478,6 +1625,10 @@ button {
     padding: 60px 20px;
 }
 
+.light-mode .video-modal {
+    background: rgba(0, 0, 0, 0.90);
+}
+
 .video-modal.active {
     display: flex;
     align-items: center;
@@ -1879,6 +2030,10 @@ button {
     z-index: 10000;
     overflow-y: auto;
     padding: 80px 20px 40px;
+}
+
+.light-mode .album-modal {
+    background: rgba(0, 0, 0, 0.90);
 }
 
 .album-modal.active {
@@ -2347,6 +2502,10 @@ button {
     animation: fadeIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+.light-mode .image-lightbox {
+    background: rgba(0, 0, 0, 0.92);
+}
+
 @keyframes fadeIn {
     from { 
         opacity: 0;
@@ -2532,10 +2691,21 @@ button {
         transition: var(--transition);
     }
 
+    .light-mode .nav-menu {
+        background: rgba(255, 255, 255, 0.98);
+    }
+
     .nav-menu.active {
         transform: translateY(0);
         opacity: 1;
         pointer-events: all;
+    }
+
+    .theme-toggle {
+        width: 100%;
+        height: 50px;
+        margin: 8px 0;
+        border-radius: 8px;
     }
 
     .nav-menu li {
@@ -2680,6 +2850,23 @@ button {
 
     .hero-subtitle {
         font-size: 16px;
+    }
+
+    .hero-stats {
+        gap: 12px;
+    }
+
+    .hero-stat {
+        padding: 10px 16px;
+        gap: 8px;
+    }
+
+    .stat-icon {
+        font-size: 20px;
+    }
+
+    .stat-text {
+        font-size: 13px;
     }
 
     .section-title {

@@ -1,4 +1,38 @@
 // ========================================
+// Theme Toggle
+// ========================================
+
+const themeToggle = document.getElementById('themeToggle');
+const moonIcon = document.getElementById('moonIcon');
+const sunIcon = document.getElementById('sunIcon');
+const html = document.documentElement;
+
+// Check for saved theme preference or default to dark mode
+const currentTheme = localStorage.getItem('theme') || 'dark';
+if (currentTheme === 'light') {
+    html.classList.add('light-mode');
+    moonIcon.classList.remove('active');
+    sunIcon.classList.add('active');
+}
+
+// Theme toggle functionality
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        html.classList.toggle('light-mode');
+        
+        if (html.classList.contains('light-mode')) {
+            localStorage.setItem('theme', 'light');
+            moonIcon.classList.remove('active');
+            sunIcon.classList.add('active');
+        } else {
+            localStorage.setItem('theme', 'dark');
+            moonIcon.classList.add('active');
+            sunIcon.classList.remove('active');
+        }
+    });
+}
+
+// ========================================
 // Navigation
 // ========================================
 
