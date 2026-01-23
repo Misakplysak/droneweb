@@ -848,6 +848,15 @@ function lightboxKeyHandler(e) {
 }
 
 // ========================================
+// Auto-update Copyright Year
+// ========================================
+
+const currentYearElement = document.getElementById('currentYear');
+if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear();
+}
+
+// ========================================
 // Console Message
 // ========================================
 
