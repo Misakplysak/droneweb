@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Nemovitosti",
+    "photoCount": 45,
+    "coverImage": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070",
+    "albumSlug": "nemovitosti"
+  },
+  {
+    "id": 2,
+    "title": "Příroda",
+    "photoCount": 67,
+    "coverImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070",
+    "albumSlug": "priroda"
+  },
+  {
+    "id": 3,
+    "title": "Města",
+    "photoCount": 52,
+    "coverImage": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070",
+    "albumSlug": "mesta"
+  },
+  {
+    "id": 4,
+    "title": "Sport & Akce",
+    "photoCount": 38,
+    "coverImage": "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2070",
+    "albumSlug": "sport"
+  },
+  {
+    "id": 5,
+    "title": "Pobřeží",
+    "photoCount": 41,
+    "coverImage": "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=2070",
+    "albumSlug": "pobrezi"
+  },
+  {
+    "id": 6,
+    "title": "Lesy",
+    "photoCount": 55,
+    "coverImage": "https://images.unsplash.com/photo-1523906630133-f6934a1ab2b9?q=80&w=2070",
+    "albumSlug": "lesy"
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "title": "Letecké fotografie",
+    "price": 3000,
+    "featured": false,
+    "features": [
+      "20-30 upravených fotografií",
+      "20 MPx rozlišení",
+      "Základní úprava fotek",
+      "Dodání do 5 dnů"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Dronové video 5.4K",
+    "price": 8000,
+    "featured": true,
+    "features": [
+      "1-2 minutové video",
+      "5.4K rozlišení",
+      "Profesionální střih",
+      "Color grading",
+      "Hudba na míru",
+      "Dodání do 10 dnů"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "FPV létání",
+    "price": 12000,
+    "featured": false,
+    "features": [
+      "Adrenalinové záběry",
+      "4K 60fps",
+      "Dynamické lety",
+      "Profesionální stabilizace",
+      "Dodání do 14 dnů"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Mapování & 3D modely",
+    "price": 15000,
+    "featured": false,
+    "features": [
+      "Ortofotomapy",
+      "3D skenování objektů",
+      "Geodetické měření",
+      "Dodání do 21 dnů"
+    ]
+  }
+]

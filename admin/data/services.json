@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Letecké fotografie",
+    "description": "Profesionální letecké fotografie z dronu pro nemovitosti, události a prezentace. Vysoké rozlišení 20 MPx a špičková kvalita.",
+    "icon": "image"
+  },
+  {
+    "id": 2,
+    "title": "Videa z dronu",
+    "description": "Dynamická 5.4K videa z dronu pro marketing, dokumentaci staveb nebo prezentace. Stabilní záběry s DJI Air 2S.",
+    "icon": "video"
+  },
+  {
+    "id": 3,
+    "title": "FPV létání",
+    "description": "Adrenalinové FPV záběry pro akční scény, sportovní události a dynamické prezentace. Jedinečné pohledy a smooth létání.",
+    "icon": "fpv"
+  },
+  {
+    "id": 4,
+    "title": "Mapování terénu",
+    "description": "Přesné ortofotomapy a geodetické měření terénu z dronu. Ideální pro stavební projekty a zemědělství.",
+    "icon": "map"
+  },
+  {
+    "id": 5,
+    "title": "3D Modely",
+    "description": "Detailní 3D skenování objektů a budov z dronu. Vytváříme realistické modely pro prezentace a dokumentaci.",
+    "icon": "3d"
+  },
+  {
+    "id": 6,
+    "title": "Střih & Postprodukce",
+    "description": "Profesionální střih videa na MacBook Pro M3. Color grading, stabilizace a montáž pro dynamický výsledek.",
+    "icon": "edit"
+  },
+  {
+    "id": 7,
+    "title": "test",
+    "description": "test",
+    "icon": "test"
+  }
+]

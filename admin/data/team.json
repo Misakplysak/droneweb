@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Michal",
+    "role": "Hlavní pilot & Kameraman",
+    "description": "Certifikovaný pilot dronů s licencí A1/A3. Specializuje se na letecké fotografie a videa pro nemovitosti a marketing.",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "skills": ["DJI Air 2S", "Sony A7III", "Final Cut Pro"],
+    "instagram": "#",
+    "youtube": "#"
+  },
+  {
+    "id": 2,
+    "name": "Jakub",
+    "role": "FPV Pilot & Specialista",
+    "description": "Expert na FPV drony a adrenalinové záběry. Vytváří dynamické a jedinečné záběry pro sportovní akce a akční scény.",
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800",
+    "skills": ["FPV Racing", "Cinewhoop", "4K 120fps"],
+    "instagram": "#",
+    "youtube": "#"
+  },
+  {
+    "id": 3,
+    "name": "Martin",
+    "role": "Editor & Postprodukce",
+    "description": "Kreativní editor s citem pro detail. Specializuje se na color grading, VFX a postprodukci pro komerční projekty.",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800",
+    "skills": ["DaVinci Resolve", "After Effects", "Color Grading"],
+    "instagram": "#",
+    "behance": "#"
+  }
+]

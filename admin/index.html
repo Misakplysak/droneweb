@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Macha Videos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="admin-header">
+        <div class="container">
+            <h1>🎬 Admin Panel - Macha Videos</h1>
+            <p>Lokální správa obsahu webu přes JSON soubory</p>
+            <div style="margin-top: 10px; padding: 10px; background: #fef3c7; border-radius: 8px; font-size: 14px;">
+                💡 <strong>Tip:</strong> Použijte Chrome nebo Edge pro automatické ukládání do správné složky. 
+                Po uložení stačí jen commitnout změny!
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="admin-nav">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-section="services">Služby</button>
+                <button class="nav-tab" data-section="videos">Video galerie</button>
+                <button class="nav-tab" data-section="featured-photos">Vybrané fotky</button>
+                <button class="nav-tab" data-section="photo-albums">Fotogalerie</button>
+                <button class="nav-tab" data-section="pricing">Ceník</button>
+                <button class="nav-tab" data-section="team">Tým</button>
+            </div>
+        </nav>
+
+        <!-- Services Section -->
+        <section id="services" class="admin-section active">
+            <div class="section-header">
+                <h2>Služby</h2>
+                <button class="btn btn-primary" onclick="openAddServiceModal()">
+                    ➕ Přidat službu
+                </button>
+            </div>
+            <div id="services-list" class="cards-grid"></div>
+        </section>
+
+        <!-- Videos Section -->
+        <section id="videos" class="admin-section">
+            <div class="section-header">
+                <h2>Video galerie</h2>
+                <button class="btn btn-primary" onclick="openAddVideoModal()">
+                    ➕ Přidat video
+                </button>
+            </div>
+            <div id="videos-list" class="cards-grid"></div>
+        </section>
+
+        <!-- Featured Photos Section -->
+        <section id="featured-photos" class="admin-section">
+            <div class="section-header">
+                <h2>Vybrané fotky (slider)</h2>
+                <button class="btn btn-primary" onclick="openAddFeaturedPhotoModal()">
+                    ➕ Přidat fotku
+                </button>
+            </div>
+            <div id="featured-photos-list" class="cards-grid"></div>
+        </section>
+
+        <!-- Photo Albums Section -->
+        <section id="photo-albums" class="admin-section">
+            <div class="section-header">
+                <h2>Fotogalerie (alba)</h2>
+                <button class="btn btn-primary" onclick="openAddAlbumModal()">
+                    ➕ Přidat album
+                </button>
+            </div>
+            <div id="albums-list" class="cards-grid"></div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="admin-section">
+            <div class="section-header">
+                <h2>Ceník</h2>
+                <button class="btn btn-primary" onclick="openAddPricingModal()">
+                    ➕ Přidat ceník
+                </button>
+            </div>
+            <div id="pricing-list" class="cards-grid"></div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="admin-section">
+            <div class="section-header">
+                <h2>Tým</h2>
+                <button class="btn btn-primary" onclick="openAddTeamModal()">
+                    ➕ Přidat člena týmu
+                </button>
+            </div>
+            <div id="team-list" class="cards-grid"></div>
+        </section>
+    </div>
+
+    <!-- Service Modal -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="service-modal-title">Přidat službu</h3>
+            </div>
+            <form id="service-form">
+                <input type="hidden" id="service-id">
+                <div class="form-group">
+                    <label for="service-title">Název služby *</label>
+                    <input type="text" id="service-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="service-description">Popis *</label>
+                    <textarea id="service-description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="service-icon">Ikona</label>
+                    <input type="text" id="service-icon" placeholder="image, video, fpv, map, 3d, edit">
+                    <small>Nepovinné - pro interní účely</small>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('service-modal')">Zrušit</button>
+                    <button type="submit" class="btn btn-success">Uložit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="video-modal-title">Přidat video</h3>
+            </div>
+            <form id="video-form">
+                <input type="hidden" id="video-id">
+                <div class="form-group">
+                    <label for="video-title">Název videa *</label>
+                    <input type="text" id="video-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="video-youtubeId">YouTube Video ID *</label>
+                    <input type="text" id="video-youtubeId" required>
+                    <small>Např. pro https://youtube.com/watch?v=ABC123 zadejte: ABC123</small>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('video-modal')">Zrušit</button>
+                    <button type="submit" class="btn btn-success">Uložit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Featured Photo Modal -->
+    <div id="featured-photo-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="featured-photo-modal-title">Přidat vybranou fotku</h3>
+            </div>
+            <form id="featured-photo-form">
+                <input type="hidden" id="featured-photo-id">
+                <div class="form-group">
+                    <label for="featured-photo-title">Název *</label>
+                    <input type="text" id="featured-photo-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="featured-photo-subtitle">Podnázev *</label>
+                    <input type="text" id="featured-photo-subtitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="featured-photo-imageUrl">URL hlavní fotky *</label>
+                    <input type="url" id="featured-photo-imageUrl" required>
+                </div>
+                <div class="form-group">
+                    <label for="featured-photo-thumbnailUrl">URL náhledu *</label>
+                    <input type="url" id="featured-photo-thumbnailUrl" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('featured-photo-modal')">Zrušit</button>
+                    <button type="submit" class="btn btn-success">Uložit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Album Modal -->
+    <div id="album-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="album-modal-title">Přidat album</h3>
+            </div>
+            <form id="album-form">
+                <input type="hidden" id="album-id">
+                <div class="form-group">
+                    <label for="album-title">Název alba *</label>
+                    <input type="text" id="album-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="album-photoCount">Počet fotografií *</label>
+                    <input type="number" id="album-photoCount" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="album-coverImage">URL titulní fotky *</label>
+                    <input type="url" id="album-coverImage" required>
+                </div>
+                <div class="form-group">
+                    <label for="album-albumSlug">Slug alba *</label>
+                    <input type="text" id="album-albumSlug" required>
+                    <small>URL název alba (např. "nemovitosti", "priroda")</small>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('album-modal')">Zrušit</button>
+                    <button type="submit" class="btn btn-success">Uložit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pricing Modal -->
+    <div id="pricing-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="pricing-modal-title">Přidat ceník</h3>
+            </div>
+            <form id="pricing-form">
+                <input type="hidden" id="pricing-id">
+                <div class="form-group">
+                    <label for="pricing-title">Název služby *</label>
+                    <input type="text" id="pricing-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="pricing-price">Cena (Kč) *</label>
+                    <input type="number" id="pricing-price" required min="0">
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="pricing-featured">
+                    <label for="pricing-featured">Označit jako "Nejoblíbenější"</label>
+                </div>
+                <div class="form-group">
+                    <label>Vlastnosti *</label>
+                    <div id="pricing-features-container"></div>
+                    <button type="button" class="btn btn-secondary" onclick="addPricingFeature()">+ Přidat vlastnost</button>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('pricing-modal')">Zrušit</button>
+                    <button type="submit" class="btn btn-success">Uložit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Team Modal -->
+    <div id="team-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="team-modal-title">Přidat člena týmu</h3>
+            </div>
+            <form id="team-form">
+                <input type="hidden" id="team-id">
+                <div class="form-group">
+                    <label for="team-name">Jméno *</label>
+                    <input type="text" id="team-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="team-role">Pozice *</label>
+                    <input type="text" id="team-role" required>
+                </div>
+                <div class="form-group">
+                    <label for="team-description">Popis *</label>
+                    <textarea id="team-description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="team-image">URL fotky *</label>
+                    <input type="url" id="team-image" required>
+                </div>
+                <div class="form-group">
+                    <label>Dovednosti *</label>
+                    <div id="team-skills-container"></div>
+                    <button type="button" class="btn btn-secondary" onclick="addTeamSkill()">+ Přidat dovednost</button>
+                </div>
+                <div class="form-group">
+                    <label for="team-instagram">Instagram URL</label>
+                    <input type="url" id="team-instagram">
+                </div>
+                <div class="form-group">
+                    <label for="team-youtube">YouTube URL</label>
+                    <input type="url" id="team-youtube">
+                </div>
+                <div class="form-group">
+                    <label for="team-behance">Behance URL</label>
+                    <input type="url" id="team-behance">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('team-modal')">Zrušit</button>
+                    <button type="submit" class="btn btn-success">Uložit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

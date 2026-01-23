@@ -1,0 +1,14 @@
+{
+  "buildCommand": null,
+  "devCommand": null,
+  "installCommand": null,
+  "framework": null,
+  "outputDirectory": ".",
+  "ignoreCommand": "true",
+  "routes": [
+    {
+      "src": "/admin(.*)",
+      "status": 404
+    }
+  ]
+}

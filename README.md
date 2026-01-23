@@ -9,8 +9,22 @@ droneweb/
 ├── index.html          # Hlavní stránka
 ├── galerie.html        # Stránka galerie
 ├── kontakt.html        # Kontaktní stránka
+├── vybaveni.html       # Stránka vybavení
 ├── style.css           # Všechny styly
 ├── script.js           # JavaScript funkcionalita
+├── data-loader.js      # Načítání dat z JSON souborů
+├── admin/              # Admin panel (NOVÝ!)
+│   ├── index.html      # Admin rozhraní
+│   ├── app.js          # Admin logika
+│   ├── style.css       # Admin styly
+│   └── data/           # JSON soubory s obsahem
+│       ├── services.json
+│       ├── videos.json
+│       ├── featured-photos.json
+│       ├── photo-albums.json
+│       ├── pricing.json
+│       └── team.json
+├── ADMIN_README.md     # Návod na správu obsahu
 └── README.md           # Dokumentace
 ```
 
@@ -82,12 +96,87 @@ Web je inspirován profesionálním designem z filipdoubrava.cz a obsahuje:
 
 ## 🚀 Jak použít
 
-1. **Otevření webu**: Jednoduše otevřete `index.html` v prohlížeči
-2. **Žádné závislosti**: Web funguje bez instalace npm balíčků
-3. **Úprava obsahu**:
-   - Text upravte přímo v HTML souborech
-   - Barvy a styly změňte v `style.css` (CSS proměnné nahoře)
-   - Přidejte vlastní obrázky/videa nahrazením placeholderů
+### ⚠️ DŮLEŽITÉ: Spusťte lokální server!
+
+Web **nefunguje** při přímém otevření souboru (`file://` protokol). Musíte spustit lokální server:
+
+```bash
+# Nejjednodušší způsob:
+./start-server.sh
+
+# Pak otevřete: http://localhost:8000
+```
+
+**Proč?** JSON data se nenačtou přes `file://` kvůli CORS omezením prohlížeče.
+
+📖 **Detailní návod:** `LOCAL_SETUP.md`
+
+---
+
+### Alternativy:
+
+1. **VS Code Live Server** (doporučeno pro vývoj)
+   - Nainstalujte extension "Live Server"
+   - Pravý klik na `index.html` → "Open with Live Server"
+
+2. **Python** (na Macu předinstalován)
+   ```bash
+   python3 -m http.server 8000
+   ```
+
+3. **Úprava obsahu:**
+   - **NOVÝ ZPŮSOB** 🎉: Použijte admin panel (viz níže)
+   - Alternativně: Upravte JSON soubory v `admin/data/`
+
+## 🎬 Admin Panel - Správa obsahu
+
+**NOVÉ!** Web nyní načítá veškerý obsah z JSON souborů. Obsah můžete spravovat pomocí lokálního admin panelu.
+
+### ⚡ Super rychlý způsob:
+
+```bash
+# 1. Otevřete admin v Chrome (automatické ukládání!)
+./open-admin.sh
+
+# 2. Upravte obsah, soubor se uloží do správné složky
+
+# 3. Commitněte jedním příkazem
+./commit-changes.sh "Aktualizace služeb"
+```
+
+### 📋 Klasický způsob:
+
+```bash
+# 1. Otevřete admin panel v Chrome/Edge
+open -a "Google Chrome" admin/index.html
+
+# 2. Upravte obsah, při prvním uložení vyberte složku admin/data/
+# 3. Chrome si zapamatuje umístění a příště uloží automaticky
+
+# 4. Commitněte
+cd admin/data
+git add .
+git commit -m "Aktualizace"
+git push
+```
+
+### Co můžete upravovat:
+- ✅ **Služby** - název, popis
+- ✅ **Video galerie** - YouTube videa
+- ✅ **Vybrané fotky** - slider na hlavní stránce
+- ✅ **Fotogalerie** - alba a kategorie
+- ✅ **Ceník** - ceny a vlastnosti
+- ✅ **Tým** - členové, fotky, dovednosti
+
+### 🎯 Pro nejlepší UX:
+- **Chrome/Edge** - automatické ukládání do správné složky
+- **VS Code** - detekce změn a commit přímo z editoru
+- **Terminal scripty** - `./open-admin.sh` a `./commit-changes.sh`
+
+📖 **Návody:**
+- ⚡ Rychlý start: `QUICKSTART.md`
+- 📖 Detailní: `ADMIN_README.md`
+- 🔧 Setup: `admin/SETUP.md`
 
 ## 🎯 Přizpůsobení
 

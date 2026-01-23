@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Horská krajina",
+    "subtitle": "Cinematic letecké záběry",
+    "imageUrl": "https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=2070",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=400"
+  },
+  {
+    "id": 2,
+    "title": "Městská architektura",
+    "subtitle": "Moderní panorama města",
+    "imageUrl": "https://images.unsplash.com/photo-1508444845599-5c89863b1c44?q=80&w=2070",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1508444845599-5c89863b1c44?q=80&w=400"
+  },
+  {
+    "id": 3,
+    "title": "Pobřežní krajina",
+    "subtitle": "Úchvatné výhledy z ptačí perspektivy",
+    "imageUrl": "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=2070",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=400"
+  },
+  {
+    "id": 4,
+    "title": "Alpské výhledy",
+    "subtitle": "Malebné horské scenérie",
+    "imageUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=400"
+  },
+  {
+    "id": 5,
+    "title": "Lesní cesty",
+    "subtitle": "Přírodní krásy z výšky",
+    "imageUrl": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2121",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=400"
+  },
+  {
+    "id": 6,
+    "title": "Severní světla",
+    "subtitle": "Noční letecké fotografie",
+    "imageUrl": "https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=2070",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=400"
+  }
+]
