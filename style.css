@@ -510,8 +510,8 @@ button {
 
 .light-mode .btn-secondary {
     background: rgba(15, 23, 42, 0.1);
-    color: #0f172a;
-    border: 1px solid rgba(15, 23, 42, 0.3);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .light-mode .btn-secondary:hover {
